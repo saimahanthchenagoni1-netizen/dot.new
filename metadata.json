@@ -1,0 +1,5 @@
+{
+  "name": "Dot AI Chatbot",
+  "description": "A minimalist AI chatbot named Dot that greets you personally.",
+  "requestFramePermissions": ["microphone"]
+}
