@@ -10,12 +10,13 @@ A friendly, minimalist AI companion built with React, Tailwind CSS, and the Gemi
 
 ## Deployment
 
-### Vercel / Netlify / Cloudflare Pages
-1. Push this repository to GitHub.
-2. Connect your GitHub repository to your deployment platform.
-3. **Crucial**: Add an environment variable named `GEMINI_API_KEY`.
-   - Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
-4. Deploy!
+### Vercel Troubleshooting
+If you see an error saying `GEMINI_API_KEY is not configured` after deploying to Vercel:
+1. Go to your project in the **Vercel Dashboard**.
+2. Go to **Settings > Environment Variables**.
+3. Ensure you have a variable named `GEMINI_API_KEY` (all caps, exactly as shown).
+4. **Important**: After adding the variable, you **MUST** trigger a new deployment for the changes to take effect. Go to the **Deployments** tab and click **Redeploy** on your latest build.
+5. If you are still having issues, try adding `VITE_GEMINI_API_KEY` with the same value as a backup.
 
 ### Local Development
 1. Clone the repository.
