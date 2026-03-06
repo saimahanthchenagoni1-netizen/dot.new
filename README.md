@@ -1,20 +1,34 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Dot - AI Companion
 
-# Run and deploy your AI Studio app
+A friendly, minimalist AI companion built with React, Tailwind CSS, and the Gemini API.
 
-This contains everything you need to run your app locally.
+## Features
+- **Editorial Style**: Beautiful magazine-like layout for complex topics.
+- **Developer Mode**: Specialized mode for coding and technical advice.
+- **Artifacts**: Support for Markdown, CSV tables, and Mermaid diagrams.
+- **File Support**: Upload and analyze files.
 
-View your app in AI Studio: https://ai.studio/apps/7ae2b80a-0b90-486a-96d6-cf0f2e0bacf8
+## Deployment
 
-## Run Locally
+### Vercel / Netlify / Cloudflare Pages
+1. Push this repository to GitHub.
+2. Connect your GitHub repository to your deployment platform.
+3. **Crucial**: Add an environment variable named `GEMINI_API_KEY`.
+   - Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+4. Deploy!
 
-**Prerequisites:**  Node.js
+### Local Development
+1. Clone the repository.
+2. Run `npm install`.
+3. Create a `.env` file based on `.env.example` and add your `GEMINI_API_KEY`.
+4. Run `npm run dev`.
 
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Tech Stack
+- React 18
+- Vite
+- Tailwind CSS
+- Google Generative AI SDK (@google/genai)
+- Framer Motion
+- Lucide React
+- Mermaid.js
+- React Markdown

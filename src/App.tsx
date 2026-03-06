@@ -551,8 +551,18 @@ export default function App() {
         ...s,
         messages: [...s.messages, dotMessage]
       } : s));
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error getting response:', error);
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'model',
+        text: `**Error:** ${error.message || "Something went wrong. Please check your connection and API key."}`,
+        timestamp: new Date(),
+      };
+      setSessions(prev => prev.map(s => s.id === currentSessionId ? {
+        ...s,
+        messages: [...s.messages, errorMessage]
+      } : s));
     } finally {
       setIsLoading(false);
     }

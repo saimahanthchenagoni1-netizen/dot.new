@@ -1,9 +1,21 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
+let aiInstance: GoogleGenAI | null = null;
+
+function getAI() {
+  if (!aiInstance) {
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      throw new Error("GEMINI_API_KEY is not configured. Please set it in your environment variables.");
+    }
+    aiInstance = new GoogleGenAI({ apiKey });
+  }
+  return aiInstance;
+}
 
 export async function getDotResponse(history: { role: string; parts: { text: string }[] }[], userInput: string, userName: string, userAge: string, mode: string = 'chat') {
   const model = "gemini-3-flash-preview";
+  const ai = getAI();
   
   let modeInstruction = "";
   if (mode === 'developer') {
